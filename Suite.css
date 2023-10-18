@@ -20,6 +20,11 @@ li{
     list-style-type:none;
 }
 
+.commentaryButton{
+    position:absolute;
+    left:78%;
+}
+
 .verseReference{
     font-weight:bold;
     padding: 0 0 0 10px;
@@ -36,6 +41,7 @@ li{
     background-color: #f5f5f5;
     border-radius: 10px;
     border: 1px solid #ccc;
+    padding:5px 0 0 0;
 }
 
 .JesusSpeaking{

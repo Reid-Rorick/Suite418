@@ -28,6 +28,8 @@
 
     <div class="container">
         <h3 class="sectionTitle" id="textToCopy">Diagnostic Questions</h3>
+        <h3 id="output"></h3>
+        
         
 
 
@@ -35,17 +37,44 @@
 
 
             <li>
-                <div class="verseContainer">
+                <div class="verseContainer" style="text-align:center">
                     <span class="verseReference">If you were to die today, what percentage chance do you think you would go to Heaven?</span><br />
-                    <ul>
+                    <div style="padding:5px">
                         
-                    </ul>                    
+                        <input id="percentageInput" placeholder="Enter percentage here"/>
+                        <button onclick="processInput()">Enter</button>
+                        
+                    </div>
+                    <script>
+                        function processInput() {
+                            
+                            var userInput = document.getElementById("percentageInput").value;
+                            var outputDiv = document.getElementById("output");
+                            var secondPrompt = document.getElementById("secondPrompt");
+                            var secondPromptWords = document.getElementById("secondPromptWords");
+
+                            // Here you can put your logic to determine the next text based on the input
+                            var nextText;
+
+                            // Example logic:
+                            if (userInput.toLowerCase() === "hello") {
+                                nextText = "You said hello!";
+                            } else {
+                                nextText = "I don't know how to respond to that.";
+                            }
+
+                            // Display the next text
+                            outputDiv.textContent = nextText;
+                            secondPrompt.style.display = "block"
+                            secondPromptWords.style.display = "block"
+                        }
+                    </script>             
                 </div>
             </li> 
 
             <li>
-                <div class="verseContainer">
-                    <span class="verseReference">What makes you say that percentage?</span><br />
+                <div class="verseContainer" style="text-align: center; display: none;" id="secondPrompt">
+                    <span id="secondPromptWords" style="display:none;" class="verseReference">What makes you certain in your answer?</span><br />
                     <ul>
                         
                     </ul>
